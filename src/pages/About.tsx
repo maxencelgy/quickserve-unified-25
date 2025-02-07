@@ -1,7 +1,9 @@
 
+import Layout from "@/components/Layout";
+
 const AboutPage = () => {
   return (
-    <div className="min-h-screen pt-16">
+    <Layout>
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold mb-4">À Propos de QuickServe</h1>
@@ -40,7 +42,7 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

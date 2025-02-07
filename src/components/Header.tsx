@@ -42,8 +42,8 @@ const Header = () => {
             <Link to="/contact" className={`text-sm font-medium hover:text-primary transition-colors ${location.pathname === "/contact" ? "text-primary" : ""}`}>
               Contact
             </Link>
-            <Button variant="default" size="sm" className="ml-4">
-              Connexion
+            <Button variant="default" size="sm" className="ml-4" asChild>
+              <Link to="/login">Connexion</Link>
             </Button>
           </nav>
 
@@ -76,8 +76,8 @@ const Header = () => {
               <Link to="/contact" className={`text-sm font-medium hover:text-primary transition-colors ${location.pathname === "/contact" ? "text-primary" : ""}`}>
                 Contact
               </Link>
-              <Button variant="default" size="sm" className="w-full">
-                Connexion
+              <Button variant="default" size="sm" className="w-full" asChild>
+                <Link to="/login">Connexion</Link>
               </Button>
             </div>
           </nav>

@@ -1,4 +1,5 @@
 
+import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Package, Home, Sparkles, Wrench } from "lucide-react";
 
@@ -27,7 +28,7 @@ const services = [
 
 const ServicesPage = () => {
   return (
-    <div className="min-h-screen pt-16">
+    <Layout>
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold mb-4">Nos Services</h1>
@@ -50,7 +51,7 @@ const ServicesPage = () => {
           ))}
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

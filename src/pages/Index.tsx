@@ -1,19 +1,16 @@
 
-import Header from "@/components/Header";
+import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
-import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Header />
+    <Layout>
       <Hero />
       <Services />
       <HowItWorks />
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 
