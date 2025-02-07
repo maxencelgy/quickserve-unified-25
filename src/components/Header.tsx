@@ -2,10 +2,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,24 +21,27 @@ const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <a href="/" className="font-bold text-xl">
+          <Link to="/" className="font-bold text-xl">
             QuickServe
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="/" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link to="/" className={`text-sm font-medium hover:text-primary transition-colors ${location.pathname === "/" ? "text-primary" : ""}`}>
               Accueil
-            </a>
-            <a href="#services" className="text-sm font-medium hover:text-primary transition-colors">
+            </Link>
+            <Link to="/services" className={`text-sm font-medium hover:text-primary transition-colors ${location.pathname === "/services" ? "text-primary" : ""}`}>
               Services
-            </a>
-            <a href="#how-it-works" className="text-sm font-medium hover:text-primary transition-colors">
-              Comment ça marche
-            </a>
-            <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
+            </Link>
+            <Link to="/about" className={`text-sm font-medium hover:text-primary transition-colors ${location.pathname === "/about" ? "text-primary" : ""}`}>
+              À propos
+            </Link>
+            <Link to="/faq" className={`text-sm font-medium hover:text-primary transition-colors ${location.pathname === "/faq" ? "text-primary" : ""}`}>
+              FAQ
+            </Link>
+            <Link to="/contact" className={`text-sm font-medium hover:text-primary transition-colors ${location.pathname === "/contact" ? "text-primary" : ""}`}>
               Contact
-            </a>
+            </Link>
             <Button variant="default" size="sm" className="ml-4">
               Connexion
             </Button>
@@ -56,18 +61,21 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden py-4 fade-in">
             <div className="flex flex-col space-y-4">
-              <a href="/" className="text-sm font-medium hover:text-primary transition-colors">
+              <Link to="/" className={`text-sm font-medium hover:text-primary transition-colors ${location.pathname === "/" ? "text-primary" : ""}`}>
                 Accueil
-              </a>
-              <a href="#services" className="text-sm font-medium hover:text-primary transition-colors">
+              </Link>
+              <Link to="/services" className={`text-sm font-medium hover:text-primary transition-colors ${location.pathname === "/services" ? "text-primary" : ""}`}>
                 Services
-              </a>
-              <a href="#how-it-works" className="text-sm font-medium hover:text-primary transition-colors">
-                Comment ça marche
-              </a>
-              <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
+              </Link>
+              <Link to="/about" className={`text-sm font-medium hover:text-primary transition-colors ${location.pathname === "/about" ? "text-primary" : ""}`}>
+                À propos
+              </Link>
+              <Link to="/faq" className={`text-sm font-medium hover:text-primary transition-colors ${location.pathname === "/faq" ? "text-primary" : ""}`}>
+                FAQ
+              </Link>
+              <Link to="/contact" className={`text-sm font-medium hover:text-primary transition-colors ${location.pathname === "/contact" ? "text-primary" : ""}`}>
                 Contact
-              </a>
+              </Link>
               <Button variant="default" size="sm" className="w-full">
                 Connexion
               </Button>
