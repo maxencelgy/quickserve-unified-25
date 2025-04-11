@@ -32,10 +32,11 @@ const HowItWorks = () => {
           <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full mb-4">
             Comment ça marche
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 relative inline-block">
             Simple, rapide et efficace
+            <span className="absolute -bottom-2 left-0 right-0 h-1 bg-primary/20 rounded-full"></span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
             Notre processus en quatre étapes simples pour vous offrir une expérience sans souci.
           </p>
         </div>
@@ -55,14 +56,6 @@ const HowItWorks = () => {
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="mt-16 text-center">
-          <img 
-            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" 
-            alt="Notre application en action" 
-            className="mx-auto rounded-lg shadow-xl max-w-full md:max-w-2xl object-cover h-80 transition-transform hover:scale-[1.02] duration-500"
-          />
         </div>
       </div>
     </section>

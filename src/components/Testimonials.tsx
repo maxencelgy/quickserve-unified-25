@@ -1,7 +1,7 @@
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -42,10 +42,11 @@ const Testimonials = () => {
           <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full mb-4">
             Témoignages
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 relative inline-block">
             Ce que nos clients disent
+            <span className="absolute -bottom-2 left-0 right-0 h-1 bg-primary/20 rounded-full"></span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
             Découvrez les expériences de nos clients satisfaits avec nos services
           </p>
         </div>
@@ -60,10 +61,13 @@ const Testimonials = () => {
           <CarouselContent className="-ml-2 md:-ml-4">
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                  <CardContent className="p-6 flex flex-col h-full">
-                    <div className="flex items-center mb-4">
-                      <div className="h-12 w-12 rounded-full overflow-hidden mr-4">
+                <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full hover:-translate-y-1">
+                  <CardContent className="p-6 flex flex-col h-full relative">
+                    <div className="absolute -top-3 -left-3 text-primary/20">
+                      <Quote size={48} className="fill-primary/5 stroke-primary/30" />
+                    </div>
+                    <div className="flex items-center mb-4 mt-4">
+                      <div className="h-12 w-12 rounded-full overflow-hidden mr-4 border-2 border-primary/20">
                         <img 
                           src={testimonial.image} 
                           alt={testimonial.name} 
@@ -90,8 +94,8 @@ const Testimonials = () => {
             ))}
           </CarouselContent>
           <div className="hidden md:flex items-center justify-center mt-8">
-            <CarouselPrevious className="-left-12" />
-            <CarouselNext className="-right-12" />
+            <CarouselPrevious className="-left-12 hover:bg-primary hover:text-white transition-colors" />
+            <CarouselNext className="-right-12 hover:bg-primary hover:text-white transition-colors" />
           </div>
         </Carousel>
       </div>
