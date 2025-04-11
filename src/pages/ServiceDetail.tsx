@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
@@ -16,10 +17,12 @@ import {
 } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Service, getServiceById, services } from "@/data/services";
+import ReservationModal from "@/components/ReservationModal";
 
 const ServiceDetail = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
   const [service, setService] = useState<Service | null>(null);
+  const [isReservationOpen, setIsReservationOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -198,8 +201,11 @@ const ServiceDetail = () => {
                   </div>
                   
                   <div className="mt-8 space-y-3">
-                    <Button className="w-full">
-                      <Calendar className="mr-2 h-4 w-4" />
+                    <Button 
+                      className="w-full group hover:scale-[1.02] transition-transform duration-200"
+                      onClick={() => setIsReservationOpen(true)}
+                    >
+                      <Calendar className="mr-2 h-4 w-4 group-hover:animate-pulse" />
                       Réserver maintenant
                     </Button>
                     <Button variant="outline" className="w-full">
@@ -247,6 +253,14 @@ const ServiceDetail = () => {
           </div>
         </div>
       </div>
+      
+      {service && (
+        <ReservationModal 
+          service={service} 
+          isOpen={isReservationOpen} 
+          onClose={() => setIsReservationOpen(false)}
+        />
+      )}
     </Layout>
   );
 };
