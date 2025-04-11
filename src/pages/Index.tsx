@@ -5,15 +5,18 @@ import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
 import StatsSection from "@/components/StatsSection";
+import { Fade } from "react-awesome-reveal";
 
 const Index = () => {
   return (
     <Layout>
-      <Hero />
-      <StatsSection />
-      <Services />
-      <HowItWorks />
-      <Testimonials />
+      <Fade triggerOnce cascade damping={0.1} direction="up">
+        <Hero />
+        <StatsSection />
+        <Services />
+        <HowItWorks />
+        <Testimonials />
+      </Fade>
     </Layout>
   );
 };
