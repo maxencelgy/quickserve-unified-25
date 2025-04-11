@@ -3,59 +3,11 @@ import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Package, Home, Sparkles, Wrench, ArrowRight, Star, Users, ShieldCheck } from "lucide-react";
-
-const services = [
-  {
-    icon: Package,
-    title: "Transport de colis",
-    description: "Livraison rapide et sécurisée de vos colis dans toute la ville",
-    image: "https://images.unsplash.com/photo-1554757388-29a2a86ef02f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
-    link: "/services/transport"
-  },
-  {
-    icon: Home,
-    title: "Déménagement",
-    description: "Service complet de déménagement avec des professionnels qualifiés",
-    image: "https://images.unsplash.com/photo-1600518464441-7a8aef55f5b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
-    link: "/services/demenagement"
-  },
-  {
-    icon: Sparkles,
-    title: "Nettoyage",
-    description: "Services de nettoyage professionnel pour particuliers et entreprises",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
-    link: "/services/nettoyage"
-  },
-  {
-    icon: Wrench,
-    title: "Dépannage",
-    description: "Intervention rapide pour tous vos besoins de dépannage",
-    image: "https://images.unsplash.com/photo-1621905251189-08b45249ff49?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
-    link: "/services/depannage"
-  }
-];
-
-const features = [
-  {
-    icon: Star,
-    title: "Service premium",
-    description: "Une qualité de service irréprochable pour chaque intervention"
-  },
-  {
-    icon: Users,
-    title: "Professionnels certifiés",
-    description: "Tous nos intervenants sont formés et qualifiés dans leur domaine"
-  },
-  {
-    icon: ShieldCheck,
-    title: "Garantie satisfaction",
-    description: "Satisfaction garantie ou nous intervenons à nouveau gratuitement"
-  }
-];
+import { ArrowRight, Star, Users, ShieldCheck } from "lucide-react";
+import { services } from "@/data/services";
 
 const ServiceCard = ({ service }) => (
-  <Link to={service.link} className="block">
+  <Link to={`/services/${service.id}`} className="block">
     <Card 
       className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-white rounded-xl h-full"
     >
@@ -82,6 +34,24 @@ const ServiceCard = ({ service }) => (
     </Card>
   </Link>
 );
+
+const features = [
+  {
+    icon: Star,
+    title: "Service premium",
+    description: "Une qualité de service irréprochable pour chaque intervention"
+  },
+  {
+    icon: Users,
+    title: "Professionnels certifiés",
+    description: "Tous nos intervenants sont formés et qualifiés dans leur domaine"
+  },
+  {
+    icon: ShieldCheck,
+    title: "Garantie satisfaction",
+    description: "Satisfaction garantie ou nous intervenons à nouveau gratuitement"
+  }
+];
 
 const ServicesPage = () => {
   return (

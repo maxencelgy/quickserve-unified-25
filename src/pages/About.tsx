@@ -18,25 +18,25 @@ const AboutPage = () => {
       icon: Heart, 
       title: "Qualité", 
       description: "Des prestations de service irréprochables à chaque intervention", 
-      color: "bg-pink-100" 
+      color: "bg-pink-50" 
     },
     { 
       icon: Target, 
       title: "Rapidité", 
       description: "Une prise en charge immédiate de vos besoins", 
-      color: "bg-blue-100" 
+      color: "bg-blue-50" 
     },
     { 
       icon: Star, 
       title: "Excellence", 
       description: "Un engagement constant vers la perfection", 
-      color: "bg-amber-100" 
+      color: "bg-amber-50" 
     },
     { 
       icon: Users, 
       title: "Confiance", 
       description: "La sécurité et la fiabilité au cœur de nos services", 
-      color: "bg-emerald-100" 
+      color: "bg-emerald-50" 
     },
   ];
 
@@ -45,7 +45,7 @@ const AboutPage = () => {
       <div className="relative bg-gradient-to-b from-secondary/30 to-transparent pt-16 pb-24">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="order-2 lg:order-1">
               <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full mb-4">
                 À Propos de Nous
               </span>
@@ -61,13 +61,17 @@ const AboutPage = () => {
               </Button>
             </div>
             
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
-                alt="Notre équipe" 
-                className="rounded-lg shadow-xl w-full h-auto object-cover"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+            <div className="relative order-1 lg:order-2">
+              <div className="relative z-10 overflow-hidden rounded-2xl shadow-xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                  alt="Notre équipe" 
+                  className="w-full h-[400px] md:h-[450px] object-cover transition-transform duration-700 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              </div>
+              
+              <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg z-20 hidden md:block">
                 <div className="flex items-center space-x-2">
                   <Award className="h-8 w-8 text-primary" />
                   <div>
@@ -76,12 +80,15 @@ const AboutPage = () => {
                   </div>
                 </div>
               </div>
+              
+              <div className="absolute -z-10 -top-6 -left-6 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+              <div className="absolute -z-10 -bottom-10 -right-10 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="py-16 bg-gradient-to-b from-transparent to-secondary/10">
+      <div className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full mb-4">
@@ -97,7 +104,7 @@ const AboutPage = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="border-0 hover:shadow-xl transition-all duration-300 group">
+              <Card key={index} className="border-0 hover:shadow-xl transition-all duration-300 group bg-white">
                 <CardContent className="p-6">
                   <div className={`mb-6 w-16 h-16 rounded-full ${value.color} flex items-center justify-center group-hover:bg-primary transition-colors duration-300`}>
                     <value.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
@@ -122,7 +129,7 @@ const AboutPage = () => {
         </div>
       </div>
       
-      <div className="py-20 bg-white">
+      <div className="py-20 bg-gradient-to-t from-secondary/10 to-transparent">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -133,7 +140,7 @@ const AboutPage = () => {
             </p>
           </div>
           
-          <div className="relative p-8 md:p-12 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl overflow-hidden">
+          <div className="relative p-8 md:p-12 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-2xl overflow-hidden">
             <div className="absolute top-0 right-0 -mt-12 -mr-12 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
             <div className="relative z-10 max-w-3xl mx-auto">
               <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-10">
