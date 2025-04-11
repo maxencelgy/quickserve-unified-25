@@ -26,7 +26,7 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="py-24">
+    <section id="how-it-works" className="py-24 bg-gradient-to-t from-primary/5 to-transparent">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full mb-4">
@@ -46,7 +46,7 @@ const HowItWorks = () => {
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-8 left-[60%] w-[calc(100%-60%)] h-0.5 bg-primary/20" />
               )}
-              <div className="text-center relative">
+              <div className="text-center relative bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="mb-6 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto group-hover:bg-primary transition-colors duration-300">
                   <step.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
                 </div>
@@ -55,6 +55,14 @@ const HowItWorks = () => {
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-16 text-center">
+          <img 
+            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" 
+            alt="Notre application en action" 
+            className="mx-auto rounded-lg shadow-xl max-w-full md:max-w-2xl object-cover h-80 transition-transform hover:scale-[1.02] duration-500"
+          />
         </div>
       </div>
     </section>
