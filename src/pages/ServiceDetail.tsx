@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
@@ -16,7 +15,7 @@ import {
   Star
 } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Service, getServiceById } from "@/data/services";
+import { Service, getServiceById, services } from "@/data/services";
 
 const ServiceDetail = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
